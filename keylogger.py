@@ -3,7 +3,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk
 
-log_file = 'file.txt'
+log_file = 'log.txt'
 cb = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 ctrl_set = 0
 
