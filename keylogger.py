@@ -6,14 +6,14 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gtk, Gdk
 
-# Log file
+# Path to the log file
 log_file = 'log.txt'
 log_fh = open(log_file, 'a')
 
 # Clipboard
 cb = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
-# Screenshot
+# Path to the directory for screenshots
 os.makedirs("screenshots", exist_ok=True)
 win = Gdk.get_default_root_window()
 h = win.get_height()

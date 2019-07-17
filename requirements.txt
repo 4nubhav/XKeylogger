@@ -1,0 +1,4 @@
+pycairo==1.18.1
+PyGObject==3.32.2
+python-xlib==0.25
+six==1.12.0
