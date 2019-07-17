@@ -38,6 +38,9 @@ python keylogger.py
 ```
 You can change the path to the log file & screenshots directory in ```keylogger.py```
 
+## Bugs & Issues
+[![Report Issues !](https://img.shields.io/badge/Report-Issues-red.svg)](https://github.com/4nubhav/XKeylogger/issues/new)
+
 ## Roadmap
 
 * Sending the logs via email, etc.  
